@@ -7,12 +7,18 @@ class TektoncdPac < Formula
   homepage "https://github.com/openshift-pipelines/pipelines-as-code"
   version "0.1"
   bottle :unneeded
-  depends_on :linux
+
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Darwin_x86_64.tar.gz"
+      sha256 "f32662a55faf8f2020c6f9adfb000a92af47779a35b4e03d4bb7e0e10827a6ef"
+    end
+  end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Linux_x86_64.tar.gz"
-      sha256 "ec21af3307eef893e1dea89d2bfa906280ef60694ffc06973a74342f97fc3793"
+      sha256 "dda2b4e9db8f58085680eababf806b978d55c96c32327d123a7c7c658679417b"
     end
   end
 
