@@ -12,7 +12,7 @@ class TektoncdPac < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Linux_x86_64.tar.gz"
-      sha256 "8168644aa583fbc3132a5691831721ac82491ebed8df16dd29f320a80976db42"
+      sha256 "ec21af3307eef893e1dea89d2bfa906280ef60694ffc06973a74342f97fc3793"
     end
   end
 
