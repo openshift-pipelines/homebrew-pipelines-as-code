@@ -12,7 +12,7 @@ class TektoncdPac < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Linux_x86_64.tar.gz"
-      sha256 "c1b0396257b29641c4d61e9192c0663b5a20a2b426d2ae9dbad5e34fc276dbe0"
+      sha256 "8168644aa583fbc3132a5691831721ac82491ebed8df16dd29f320a80976db42"
     end
   end
 
@@ -20,7 +20,7 @@ class TektoncdPac < Formula
   depends_on "git"
 
   def install
-    bin.install "tkn-pac"- => "tkn-pac"
+    bin.install "tkn-pac" => "tkn-pac"
     output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
     (bash_completion/"tkn-pac").write output
     output = Utils.popen_read("SHELL=zsh #{bin}/tkn-pac completion zsh")
