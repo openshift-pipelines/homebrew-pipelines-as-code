@@ -5,20 +5,20 @@
 class TektoncdPac < Formula
   desc "Tekton PAC - The command line interface for interacting with Pipelines as Code"
   homepage "https://github.com/openshift-pipelines/pipelines-as-code"
-  version "0.1"
+  version "0.2"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Darwin_x86_64.tar.gz"
-      sha256 "b4564107bb88a309266ad224e76290e47ddb715a77eba988556ef8b30221bc13"
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.2/tkn-pac_0.2_Darwin_x86_64.tar.gz"
+      sha256 "6901e9c32fb9b31c7759aa013ff1f538ab8659e1297415b0874e29b02488e6e8"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.1/tkn-pac_0.1_Linux_x86_64.tar.gz"
-      sha256 "6ba6f39f964bc650620015b07be3a9bea0c6a9bd37970ea348e30f26b04e8730"
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.2/tkn-pac_0.2_Linux_x86_64.tar.gz"
+      sha256 "1c526a574e362c06192aa64f97a3e0b2e5ecea1e3cd7eedde5760e1b33007aa5"
     end
   end
 
