@@ -5,22 +5,22 @@
 class TektoncdPac < Formula
   desc "Tekton PAC - The command line interface for interacting with Pipelines as Code"
   homepage "https://github.com/openshift-pipelines/pipelines-as-code"
-  version "0.4.1"
+  version "0.4.2"
   bottle :unneeded
 
   on_macos do
-    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.1/tkn-pac_0.4.1_MacOS_all.tar.gz"
-    sha256 "cf9cb78786bd16b2540daf61a571f514ebc81adf24b2f89169b9ba6529e97431"
+    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.2/tkn-pac_0.4.2_MacOS_all.tar.gz"
+    sha256 "3336db2abfcaca5d32d868468739eab16953f0a1500116658b767a3d5c5c50fd"
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.1/tkn-pac_0.4.1_Linux_x86_64.tar.gz"
-      sha256 "80eb3d8e9a570836f32eb110567f81dbb8e4a906a9d1d9d490824794cc87a61f"
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.2/tkn-pac_0.4.2_Linux_x86_64.tar.gz"
+      sha256 "c11972d28efa2a9902a373857f09d8cbb3895d6a8350a550499cb569d650b171"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.1/tkn-pac_0.4.1_Linux_arm64.tar.gz"
-      sha256 "f70e6b5c069c9e4998662db8a94a2ea3bfd8b10ee9df4200a99b26179c9f745c"
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.2/tkn-pac_0.4.2_Linux_arm64.tar.gz"
+      sha256 "7762205b5a03c077293db41a48cb95e44cb616adf8ef91f0b2548fe7ae5dfe58"
     end
   end
 
