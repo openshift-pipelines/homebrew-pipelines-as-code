@@ -10,17 +10,17 @@ class TektoncdPac < Formula
 
   on_macos do
     url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.3/tkn-pac_0.4.3_MacOS_all.tar.gz"
-    sha256 "11199c8e8913ed757aaf56e8608de1183d62366aaef4b4d0b46445bc3371d792"
+    sha256 "500523ea44193cb241772cc4b92e27566a2a3a9b6d44139f60d6e03838d3de26"
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.3/tkn-pac_0.4.3_Linux_arm64.tar.gz"
-      sha256 "49214e886b320bf121b061bc256876493fc1f1a3ab218f92285571e7363cab86"
+      sha256 "188ae1a1647de67211147a9a8f3f4f1b1362864e15eb637150af80acae3d8f26"
     end
     if Hardware::CPU.intel?
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.4.3/tkn-pac_0.4.3_Linux_x86_64.tar.gz"
-      sha256 "988779baf45b679feeec5e36d904cf0f11681e1cd4adfbd29d3474f1b2980bab"
+      sha256 "bd59bebbe74b7e8a6af636c97359d29fefc4cee3516c2e80bd2dc13c2a08f685"
     end
   end
 
