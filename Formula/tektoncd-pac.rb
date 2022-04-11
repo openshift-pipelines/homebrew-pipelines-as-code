@@ -5,11 +5,11 @@
 class TektoncdPac < Formula
   desc "Tekton PAC - The command line interface for interacting with Pipelines as Code"
   homepage "https://github.com/openshift-pipelines/pipelines-as-code"
-  version "0.5.7"
+  version "0.5.8"
 
   on_macos do
-    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.7/tkn-pac_0.5.7_MacOS_all.tar.gz"
-    sha256 "f5c2e91c4777254a0ff62a820332777982301f69bbb55f17a42322b9419fa1be"
+    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.8/tkn-pac_0.5.8_MacOS_all.tar.gz"
+    sha256 "b876213cc5d4d3a7b98f7063549d7d5e12818b39cfc920e2154847e9ddf06be7"
 
     def install
       bin.install "tkn-pac" => "tkn-pac"
@@ -22,9 +22,9 @@ class TektoncdPac < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.7/tkn-pac_0.5.7_Linux_arm64.tar.gz"
-      sha256 "8d47b7f763ba9598d77499da21783fbdf99a5255db2aa2385dcf0d682a732e80"
+    if Hardware::CPU.intel?
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.8/tkn-pac_0.5.8_Linux_x86_64.tar.gz"
+      sha256 "90cf1ae3f0fa4432764146ad2a4c69f7ae03478558187dca27ac3a656f498449"
 
       def install
         bin.install "tkn-pac" => "tkn-pac"
@@ -35,9 +35,9 @@ class TektoncdPac < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.7/tkn-pac_0.5.7_Linux_x86_64.tar.gz"
-      sha256 "676798aac59e11443e2bd0487c269491314ca1b5f53a0218b23a42499590bdcd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/0.5.8/tkn-pac_0.5.8_Linux_arm64.tar.gz"
+      sha256 "abab77f12073f62ea6ac5eccd4d4a6fe2c3ccd8569d79a41a406959df8520ede"
 
       def install
         bin.install "tkn-pac" => "tkn-pac"
