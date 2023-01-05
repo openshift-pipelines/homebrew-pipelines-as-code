@@ -5,14 +5,14 @@
 class TektoncdPac < Formula
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
-  version "0.15.0"
+  version "0.15.1"
 
   depends_on "tektoncd-cli" => :optional
   depends_on "git"
 
   on_macos do
-    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.0/tkn-pac_0.15.0_MacOS_all.tar.gz"
-    sha256 "41da51e8cba946869ab8e3b45a0fc55997952d694b65cfa3463447bcf17446f2"
+    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.1/tkn-pac_0.15.1_MacOS_all.tar.gz"
+    sha256 "b9f2181898e4aa0c0f65e928e80b1582a67038872111554de3f8339be54ed6bf"
 
     def install
       bin.install "tkn-pac" => "tkn-pac"
@@ -25,9 +25,9 @@ class TektoncdPac < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.0/tkn-pac_0.15.0_Linux_arm64.tar.gz"
-      sha256 "3c8f08bcea1faf357868d976d4bc78e5ef99d2ba14f06c84438f07ed48a89525"
+    if Hardware::CPU.intel?
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.1/tkn-pac_0.15.1_Linux_x86_64.tar.gz"
+      sha256 "4334bcd6318612cdfa88cde337e9eae402c1342ee8bf21180296a519ba32a0d4"
 
       def install
         bin.install "tkn-pac" => "tkn-pac"
@@ -38,9 +38,9 @@ class TektoncdPac < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.0/tkn-pac_0.15.0_Linux_x86_64.tar.gz"
-      sha256 "f3915cde5d5b69643e4b7c384914373da5ae68c71a8e1d68fed5e8d4b1f2bd43"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.15.1/tkn-pac_0.15.1_Linux_arm64.tar.gz"
+      sha256 "9da954e778e0242435d6927b91cec6f75263c3ac3e595bcccc994e8532fb63c0"
 
       def install
         bin.install "tkn-pac" => "tkn-pac"
