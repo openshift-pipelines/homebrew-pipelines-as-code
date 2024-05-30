@@ -5,14 +5,14 @@
 class TektoncdPac < Formula
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
-  version "0.27.0"
+  version "0.24.7"
 
   depends_on "git"
   depends_on "tektoncd-cli" => :optional
 
   on_macos do
-    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.27.0/tkn-pac_0.27.0_darwin_all.tar.gz"
-    sha256 "f0dbf6420ce5d0e6d113a24734b6a78beb533dc18bbc47b018b8da9993367083"
+    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.24.7/tkn-pac_0.24.7_darwin_all.tar.gz"
+    sha256 "cc5f4ac447b39b5765d202324fd79359bebe64155686027c4771866cd786b751"
 
     def install
       bin.install "tkn-pac" => "tkn-pac"
@@ -25,30 +25,34 @@ class TektoncdPac < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.27.0/tkn-pac_0.27.0_linux_x86_64.tar.gz"
-      sha256 "f0a65cca26e93db6fdaa0931d27642c773ff089ce704fe386933873c3176e893"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.24.7/tkn-pac_0.24.7_linux_x86_64.tar.gz"
+        sha256 "42539c8835bffe9bf8b4bbf17199561ec9594f3f3b4122fcc837b83644ff3ce5"
 
-      def install
-        bin.install "tkn-pac" => "tkn-pac"
-        output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
-        (bash_completion/"tkn-pac").write output
-        output = Utils.popen_read("SHELL=zsh #{bin}/tkn-pac completion zsh")
-        (zsh_completion/"_tkn-pac").write output
-        prefix.install_metafiles
+        def install
+          bin.install "tkn-pac" => "tkn-pac"
+          output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
+          (bash_completion/"tkn-pac").write output
+          output = Utils.popen_read("SHELL=zsh #{bin}/tkn-pac completion zsh")
+          (zsh_completion/"_tkn-pac").write output
+          prefix.install_metafiles
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.27.0/tkn-pac_0.27.0_linux_arm64.tar.gz"
-      sha256 "1482930d4a0a7200ed1ce36d1eb1db3776a250ecdde85c4f6925f003a714f0d3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v0.24.7/tkn-pac_0.24.7_linux_arm64.tar.gz"
+        sha256 "590918dbf07fca486bfd4d03064f3add7700fa97a17d5c0abd51f568092f4427"
 
-      def install
-        bin.install "tkn-pac" => "tkn-pac"
-        output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
-        (bash_completion/"tkn-pac").write output
-        output = Utils.popen_read("SHELL=zsh #{bin}/tkn-pac completion zsh")
-        (zsh_completion/"_tkn-pac").write output
-        prefix.install_metafiles
+        def install
+          bin.install "tkn-pac" => "tkn-pac"
+          output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
+          (bash_completion/"tkn-pac").write output
+          output = Utils.popen_read("SHELL=zsh #{bin}/tkn-pac completion zsh")
+          (zsh_completion/"_tkn-pac").write output
+          prefix.install_metafiles
+        end
       end
     end
   end
