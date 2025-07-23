@@ -34,17 +34,17 @@ cask "tektoncd-pac" do
 
   on_macos do
     url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_darwin_all.zip"
-    sha256 "76dda7ed331024ef331ac3dbe12c66a14d59811979a8893c0461c72fa7980df5"
+    sha256 "171a63edc3f4fa8e75a37bc7708b00430d8036a3e3edfbdb1e01fd3297b245f1"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_x86_64.tar.gz"
-      sha256 "7f9c2ddfa352abdcd7db8ef6c5b1d0cc0d96dc16dff88c3cb99162ed3de4d3f2"
+      sha256 "94b3233616d4d7d5692e4c4b1d28e085ce01cdf6ca3ae9356bbf8241be2de642"
     end
     on_arm do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_arm64.tar.gz"
-      sha256 "6a4a93f06892df2a71fee267096390e128ecff95b2e46fecd0509b378d6725ae"
+      sha256 "d90e1c0122dbbe749b18196dba2fd035d2858b24acb9d41ef878ff99fefc9169"
     end
   end
 
