@@ -13,7 +13,6 @@ cask "tektoncd-pac" do
     File.write fish_completion, stdout
   end
 
-  binary "tkn-pac"
   binary zsh_completion, target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_tkn-pac"
   binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
   binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
@@ -26,7 +25,7 @@ cask "tektoncd-pac" do
     skip "Auto-generated on release."
   end
 
-  binary "tektoncd-pac"
+  binary "tkn-pac"
   depends_on formula: [
       "git",
       "tektoncd-cli",
@@ -34,17 +33,17 @@ cask "tektoncd-pac" do
 
   on_macos do
     url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_darwin_all.zip"
-    sha256 "171a63edc3f4fa8e75a37bc7708b00430d8036a3e3edfbdb1e01fd3297b245f1"
+    sha256 "10018f3020f85f80a5be176b56bbaf7842ed76c06b06d69e356d6d895b76ff9a"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_x86_64.tar.gz"
-      sha256 "94b3233616d4d7d5692e4c4b1d28e085ce01cdf6ca3ae9356bbf8241be2de642"
+      sha256 "c8c1bab0a841a17389c8333e99c3d6663bb6b883485d7a5057f04519f0ef3583"
     end
     on_arm do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_arm64.tar.gz"
-      sha256 "d90e1c0122dbbe749b18196dba2fd035d2858b24acb9d41ef878ff99fefc9169"
+      sha256 "4db653498768a98fe85b276283beab8706e3030e23e839fb65669b6ba58c8668"
     end
   end
 
