@@ -4,12 +4,7 @@ cask "tektoncd-pac" do
   bash_completion = "#{staged_path}/tkn-pac.bash"
   fish_completion = "#{staged_path}/tkn-pac.fish"
 
-  binary "tkn-pac"
-  binary zsh_completion, target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_tkn-pac"
-  binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
-  binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
-
-  postflight do
+  preflight do
     stdout, * = system_command "#{staged_path}/tkn-pac", args: ["completion", "bash"]
     File.write bash_completion, stdout
     stdout, * = system_command "#{staged_path}/tkn-pac", args: ["completion", "zsh"]
@@ -17,6 +12,11 @@ cask "tektoncd-pac" do
     stdout, * = system_command "#{staged_path}/tkn-pac", args: ["completion", "fish"]
     File.write fish_completion, stdout
   end
+
+  binary "tkn-pac"
+  binary zsh_completion, target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_tkn-pac"
+  binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
+  binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
 
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
@@ -34,17 +34,17 @@ cask "tektoncd-pac" do
 
   on_macos do
     url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_darwin_all.zip"
-    sha256 "648c2936453bac6aace21bb9fce7f538f729daed009a39ec1dc5f61d643da41f"
+    sha256 "1ade48df3ae090b30c1f2990a537702258404c2aa28a1444c4a22a09ba03020d"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_x86_64.tar.gz"
-      sha256 "110d18ba1b5717e8d08abe521e271f49df7e4a870b026bab46d48279337eb42a"
+      sha256 "2282a2d7adb016d2d0952e6e8a5be677ae5e9fcc301fb11290ce3bb10ebcebec"
     end
     on_arm do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_arm64.tar.gz"
-      sha256 "cc0709e5d2f8ca7fbdbfe6f398919f2db088ab7b96f17807e0fd667d5d12cc4c"
+      sha256 "bd013dde01754ac1c69917f63a7c6fee839ae18cc50ee19a6860b4d12eb1750f"
     end
   end
 
