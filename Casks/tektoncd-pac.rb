@@ -26,7 +26,7 @@ cask "tektoncd-pac" do
     skip "Auto-generated on release."
   end
 
-  binary "tkn-pac"
+  binary "tektoncd-pac"
   depends_on formula: [
       "git",
       "tektoncd-cli",
@@ -34,17 +34,17 @@ cask "tektoncd-pac" do
 
   on_macos do
     url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_darwin_all.zip"
-    sha256 "1ade48df3ae090b30c1f2990a537702258404c2aa28a1444c4a22a09ba03020d"
+    sha256 "76dda7ed331024ef331ac3dbe12c66a14d59811979a8893c0461c72fa7980df5"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_x86_64.tar.gz"
-      sha256 "2282a2d7adb016d2d0952e6e8a5be677ae5e9fcc301fb11290ce3bb10ebcebec"
+      sha256 "7f9c2ddfa352abdcd7db8ef6c5b1d0cc0d96dc16dff88c3cb99162ed3de4d3f2"
     end
     on_arm do
       url "https://github.com/chmouel/pipelines-as-code/releases/download/v0.36.1/tkn-pac_0.36.1_linux_arm64.tar.gz"
-      sha256 "bd013dde01754ac1c69917f63a7c6fee839ae18cc50ee19a6860b4d12eb1750f"
+      sha256 "6a4a93f06892df2a71fee267096390e128ecff95b2e46fecd0509b378d6725ae"
     end
   end
 
