@@ -20,7 +20,7 @@ cask "tektoncd-pac" do
   name "tektoncd-pac"
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
-  version "0.38.0"
+  version "0.37.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -34,17 +34,17 @@ cask "tektoncd-pac" do
 
   on_macos do
     url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_darwin_all.zip"
-    sha256 "32bcba9d6304ece2f2ee821a161d1c8b573d4fa5c591ec3c84b6b4babc76fb2a"
+    sha256 "05cb8b2c1ac8c02e839c97db5e6c71c9e1194a592ca25609f61164f1cd83fc04"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_x86_64.tar.gz"
-      sha256 "157ddb51dc011fe1b877a61d2a1bb6d812d0b68c74993754355b24e025457e80"
+      sha256 "16211d5ad8020c256334d6d771bbfa233957b7790c0dc63a40a0b3c125a596c0"
     end
     on_arm do
       url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_arm64.tar.gz"
-      sha256 "0bb8d6e4ed273750407c32b2b85542b45da92374e3e67b3aec5f020ce4f9c66e"
+      sha256 "31c96882a447022da2d73cbdab8d5aeb3a806df3b2e9e5a442385110ebb36241"
     end
   end
 
