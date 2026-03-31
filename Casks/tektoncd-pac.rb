@@ -17,36 +17,38 @@ cask "tektoncd-pac" do
   binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
   binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
 
+  version "0.44.0"
+
+  on_macos do
+    url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_darwin_all.zip"
+    sha256 "a063232f31f8fed3a74cfceb827dd36f9e0b65d8dbcfc4f16cd82c114d13b5ff"
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_x86_64.tar.gz"
+      sha256 "67a47d7d729c5f3ade6576ed237f23bdbdee4a00baa01760653fd5eb6993aca2"
+    end
+    on_arm do
+      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_arm64.tar.gz"
+      sha256 "46d421bbb36fdc8edd4edefb9ae8b0f2114078b2f1ca8e891a6a922fbc6a3234"
+    end
+  end
+
   name "tektoncd-pac"
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
-  version "0.43.0"
 
   livecheck do
     skip "Auto-generated on release."
   end
-
-  binary "tkn-pac"
   depends_on formula: [
       "git",
       "tektoncd-cli",
     ]
 
-  on_macos do
-    url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_darwin_all.zip"
-    sha256 "39d940fe46dfb7e3133057600dba5e945d3ac39129e90cf580589a3aba912c0f"
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_x86_64.tar.gz"
-      sha256 "6679f12332a7e232030cf7b7bfc36b63dba2c977d4e8e7f15a28208a2de4cde6"
-    end
-    on_arm do
-      url "https://github.com/openshift-pipelines/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_arm64.tar.gz"
-      sha256 "b6bb4cbaf9f11415b877052a7dee5f15702b656c74d0c78a69588c7de26ccd57"
-    end
-  end
+  binary "tkn-pac"
 
   # No zap stanza required
+
 end
