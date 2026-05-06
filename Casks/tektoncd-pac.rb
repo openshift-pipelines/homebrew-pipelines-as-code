@@ -17,21 +17,21 @@ cask "tektoncd-pac" do
   binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
   binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
 
-  version "0.45.0"
+  version "0.46.0"
 
   on_macos do
+    sha256 "573f8f7fbfcb95f164dc9e095594c4e1a373bf141915ac9c7a051ebdbce786f2"
     url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_darwin_all.zip"
-    sha256 "de2803fbfafb161bb123f5a722d4c41187add8205281380a5b82a9d9e05a4c6a"
   end
 
   on_linux do
     on_intel do
+      sha256 "c5ed9e7ef329a33946f10c9c2692049d2dcbd8298edc2a02ece4de1e11a78b1b"
       url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_x86_64.tar.gz"
-      sha256 "efdcf093b68d5cc9ece2a47f01451dadd49a553c99f05ba23d09893830fd7380"
     end
     on_arm do
+      sha256 "c87c007c98034d11e249a1e780cb195ec3c90ba70e51c0fc92d8743b17d35f31"
       url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_arm64.tar.gz"
-      sha256 "77aef231dc03e67c18a22b12af2de9c323b78dbcb1fb5cd8c94d8f5e7adc95b2"
     end
   end
 
