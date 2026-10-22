@@ -5,14 +5,14 @@
 class TektoncdPac < Formula
   desc "tkn-pac - A command line interface for interacting with Pipelines as Code"
   homepage "https://pipelinesascode.com"
-  version "0.27.4"
+  version "0.27.5"
 
   depends_on "git"
   depends_on "tektoncd-cli" => :optional
 
   on_macos do
-    url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.4/tkn-pac_0.27.4_darwin_all.tar.gz"
-    sha256 "a1c7abef5d5ecbcfb13e1065c526b25352016c6ed4926f7d7ac6da7b5ee6fa16"
+    url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.5/tkn-pac_0.27.5_darwin_all.tar.gz"
+    sha256 "11aad3fa519579c83292dff87c2c53b20d74aa84512b156599adff097c83733b"
 
     define_method(:install) do
       bin.install "tkn-pac" => "tkn-pac"
@@ -26,8 +26,8 @@ class TektoncdPac < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.4/tkn-pac_0.27.4_linux_x86_64.tar.gz"
-      sha256 "d5ca86fbcd4bc99c72309420e3fb018f6b6f07473a63295bdf4e2e3c954bd4a4"
+      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.5/tkn-pac_0.27.5_linux_x86_64.tar.gz"
+      sha256 "15ef24299af1047ddb1ad993d29e0cdef23d4f5ad65e3b789e7e7c3ab2862916"
       define_method(:install) do
         bin.install "tkn-pac" => "tkn-pac"
         output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
@@ -38,8 +38,8 @@ class TektoncdPac < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.4/tkn-pac_0.27.4_linux_arm64.tar.gz"
-      sha256 "87231c12bcd6edb22a2aa29d893d32c33c78f0a2e6f4dd65b04fae146dabb8a3"
+      url "https://github.com/tektoncd/pipelines-as-code/releases/download/v0.27.5/tkn-pac_0.27.5_linux_arm64.tar.gz"
+      sha256 "8b635840f377e8f404158d684b7dd284852e0696323cd9e5070461328905d6fe"
       define_method(:install) do
         bin.install "tkn-pac" => "tkn-pac"
         output = Utils.popen_read("SHELL=bash #{bin}/tkn-pac completion bash")
