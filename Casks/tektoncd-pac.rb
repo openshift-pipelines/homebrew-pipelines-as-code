@@ -17,19 +17,19 @@ cask "tektoncd-pac" do
   binary bash_completion, target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/tkn-pac"
   binary fish_completion, target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/tkn-pac.fish"
 
-  version "0.50.2"
+  version "0.53.0"
 
   on_macos do
-    sha256 "b3d715d2bdbe52971a042ad5319bac49206d67ce7d4a49ca7f9179e5e2105dc3"
+    sha256 "e683e3c7ec82807cd8461ea30351b0a06e8b0153962e0a52eb1a61da8bee619f"
     url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_darwin_all.zip"
   end
   on_linux do
     on_arm do
-      sha256 "7e73e6e68b227335f71ce623ce5eef631b49928da1f3774dd8a1ec4542c28361"
+      sha256 "f895a3f2522450311ab12b15d3dfebcb9ca249ab0e62050b48742e9e461baaab"
       url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "301aef2378d4b952d77fec53e0e0872677f886e7cd95c8524044fd969644e522"
+      sha256 "87e9f1a98ad78322c2ec0f2cae9976be685e996c063ad917183b069ba94c75ff"
       url "https://github.com/tektoncd/pipelines-as-code/releases/download/v#{version}/tkn-pac_#{version}_linux_x86_64.tar.gz"
     end
   end
@@ -48,7 +48,7 @@ cask "tektoncd-pac" do
 
   binary "tkn-pac"
 
-  # No zap stanza required
+  zap :not_required
 
   caveats <<~EOS
     On first run, macOS may block the binary. To remove the quarantine attribute:
